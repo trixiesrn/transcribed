@@ -4,8 +4,9 @@
     color: #FFF;
     border: 1px solid #333;
     margin-top: 3rem;
+    width: 100%;
 
-    &.is-blue {
+    &.is-white {
         width: 100%;
         border: 1px solid #333;
         background: #FFF;
@@ -17,5 +18,9 @@
         background-color: #FFF;
         border: 1px solid #333;
         color: #333;
+    }
+
+    &.has-nomargin {
+        margin-top: 0;
     }
 }

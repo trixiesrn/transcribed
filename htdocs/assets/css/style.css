@@ -46,19 +46,82 @@
   right: 0;
 }
 
+.p-dashboard {
+  margin: 10% auto;
+  width: 50%;
+}
+.p-dashboard__users-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.p-dashboard__users-section__icon {
+  height: 3rem;
+  width: 3rem;
+  border: 1px solid #333;
+  border-radius: 99999px;
+}
 .p-dashboard__button-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  border-top: 1px solid #333;
+  margin-top: 3rem;
+  padding-top: 3rem;
 }
 .p-dashboard__button-group__button {
   padding: 1rem;
+  background: #FFF;
+  border: 1px solid #333;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.p-dashboard__button-group__button__icon {
+  height: 3rem;
+  width: 3rem;
 }
 
-.c-text-field {
+.p-writefreely {
+  margin: 10% auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid #333;
+  padding: 2rem;
+}
+.p-writefreely__headers {
+  text-align: center;
+}
+.p-writefreely__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.p-writefreely__form__button-group {
+  display: flex;
+  gap: 2rem;
+}
+
+.c-textfield {
   padding: 1rem 0;
   border: none;
   border-bottom: 1px solid #333;
+}
+.c-textfield:focus {
+  border: none;
+}
+
+.c-textarea {
+  height: auto;
+  border: none;
+  width: 100%;
+}
+.c-textarea:focus {
+  border: none;
 }
 
 .c-button {
@@ -67,8 +130,9 @@
   color: #FFF;
   border: 1px solid #333;
   margin-top: 3rem;
+  width: 100%;
 }
-.c-button.is-blue {
+.c-button.is-white {
   width: 100%;
   border: 1px solid #333;
   background: #FFF;
@@ -79,6 +143,9 @@
   background-color: #FFF;
   border: 1px solid #333;
   color: #333;
+}
+.c-button.has-nomargin {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

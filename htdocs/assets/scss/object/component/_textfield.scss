@@ -1,5 +1,9 @@
-.c-text-field {
+.c-textfield {
     padding: 1rem 0;
     border: none;
     border-bottom: 1px solid #333;
+
+    &:focus {
+        border: none;
+    }
 }
