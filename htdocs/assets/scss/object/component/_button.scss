@@ -1,0 +1,21 @@
+.c-button {
+    padding: 1rem;
+    background: #333;
+    color: #FFF;
+    border: 1px solid #333;
+    margin-top: 3rem;
+
+    &.is-blue {
+        width: 100%;
+        border: 1px solid #333;
+        background: #FFF;
+        margin-top: 0;
+        color: #333;
+    }
+
+    &:hover {
+        background-color: #FFF;
+        border: 1px solid #333;
+        color: #333;
+    }
+}
