@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-       
-    </style>
+    <script defer type="module" src="assets/js/firebase-connection.js"></script>
+    <script defer type="module" src="assets/js/firebase-getUserData.js"></script>
 </head>
 <body>
+    <h1>Welcome, <span id="user-name"></span></h1>
+    <p>Email: <span id="user-email"></span></p>
+    <img id="user-photo" alt="Profile Photo" width="100" />
     <div class="p-dashboard">
         <div class="p-dashboard__users-section">
             <img src="assets/img/dashboard/icon-user.svg" alt=""class="p-dashboard__users-section__icon">
