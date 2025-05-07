@@ -5,22 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transcribed</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .timer-container {
+            text-align: center;
+            background: #ffffff;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+
+        }   
+
+        .countdown div {
+        background: #e0f2fe;
+        padding: 15px 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown span {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #0284c7;
+        }
+
+        .countdown p {
+        margin: 0;
+        font-size: 1rem;
+        color: #333;
+        }
+
+    @media (max-width: 768px) {
+        .countdown{
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .countdown{
+            flex-direction: column;
+        }
+    }
+
+    </style>
 </head>
 <body>
     <div class="p-login">
         <div class="p-login__title">
             <p class="p-login__title__txt">transcribed</p>
         </div>
-        <form action="" class="p-login__form">
-            <input type="text" name="" id="" class="c-textfield" placeholder="Email">
-            <input type="password" name="" id="" class="c-textfield" placeholder="Password">
-            <input type="submit" value="Login" class="c-button">
-        </form>
-        <div class="p-login__divider-section">
-            <span class="p-login__divider-section__hr">or</span>
-        </div>
-        <button class="c-button is-blue">Login with Google</button>
+        <p class="p-login__description">Hi love, This is our platform. We can express our thoughts without fear of being flooded by our chats. <3</p>
+        <p style="text-align: center;">This will be available on</p>
+        <div class="countdown">
+            <div><span id="days">0</span><p>Days</p></div>
+            <div><span id="hours">0</span><p>Hours</p></div>
+            <div><span id="minutes">0</span><p>Minutes</p></div>
+            <div><span id="seconds">0</span><p>Seconds</p></div>
+          </div>
     </div>
     <script defer type="module" src="assets/js/firebase-connection.js"></script>
+
+    <script>
+        // Set the date we're counting down to
+        const targetDate = new Date("May 12, 2025 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        const countdownInterval = setInterval(function() {
+        // Get the current date and time
+        const now = new Date().getTime();
+
+        // Calculate the difference between now and the target date
+        const distance = targetDate - now;
+
+        // Time calculations for days, hours, minutes, and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the countdown values
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        // If the countdown is finished, redirect to index.html
+        if (distance < 0) {
+            clearInterval(countdownInterval);  // Stop the countdown
+            window.location.href = "login.html"; // Redirect to index.html
+        }
+        }, 1000);
+
+
+    </script>
 </body>
 </html>

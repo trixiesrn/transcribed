@@ -1,6 +1,9 @@
-@import "object/project/index";
+// Import page styles
+@import "object/project/login/index";
 @import "object/project/dashboard/index";
 @import "object/project/write-freely/index";
+
+//Import component styles
 @import "object/component/textfield";
 @import "object/component/textarea";
 @import "object/component/button";

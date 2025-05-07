@@ -2,12 +2,45 @@
   margin: 10% auto;
   width: 50%;
 }
-
+@media (max-width: 1024px) {
+  .p-login {
+    margin: 10% auto;
+  }
+}
+@media (max-width: 768px) {
+  .p-login {
+    margin: 5% auto;
+  }
+}
+@media (max-width: 480px) {
+  .p-login {
+    font-size: 1vh;
+  }
+}
 .p-login__title__txt {
   font-family: "Courier New", Courier, monospace;
   left: 100%;
   font-size: 10vh;
   text-align: center;
+}
+@media (max-width: 1024px) {
+  .p-login__title__txt {
+    font-size: 8vh;
+  }
+}
+@media (max-width: 768px) {
+  .p-login__title__txt {
+    font-size: 6vh;
+  }
+}
+@media (max-width: 480px) {
+  .p-login__title__txt {
+    font-size: 4vh;
+  }
+}
+.p-login__description {
+  background: #FFF;
+  padding: 1rem;
 }
 
 .p-login__form {
