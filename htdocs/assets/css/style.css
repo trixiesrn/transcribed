@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .p-login {
   margin: 10% auto;
   width: 50%;
@@ -19,7 +24,6 @@
 }
 .p-login__title__txt {
   font-family: "Courier New", Courier, monospace;
-  left: 100%;
   font-size: 10vh;
   text-align: center;
 }
@@ -80,8 +84,25 @@
 }
 
 .p-dashboard {
-  margin: 10% auto;
-  width: 50%;
+  background: #82BAC4;
+  height: 100vh;
+}
+.p-dashboard__header__text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3rem;
+  text-align: center;
+  color: #FFF;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .p-dashboard__header__text {
+    font-size: 6vh;
+  }
+}
+@media (max-width: 480px) {
+  .p-dashboard__header__text {
+    font-size: 4vh;
+  }
 }
 .p-dashboard__users-section {
   display: flex;
@@ -91,30 +112,38 @@
 .p-dashboard__users-section__icon {
   height: 3rem;
   width: 3rem;
-  border: 1px solid #333;
-  border-radius: 99999px;
 }
 .p-dashboard__button-group {
+  margin: auto 25%;
+  width: 50%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  border-top: 1px solid #333;
   margin-top: 3rem;
   padding-top: 3rem;
+  width: 75%;
 }
 .p-dashboard__button-group__button {
   padding: 1rem;
   background: #FFF;
-  border: 1px solid #333;
-  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 1px solid #333;
   align-items: center;
 }
 .p-dashboard__button-group__button__icon {
   height: 3rem;
   width: 3rem;
+}
+.p-dashboard__content {
+  background: rgba(255, 255, 255, 0.3137254902);
+  border-radius: 3rem;
+  height: 70vh;
+  margin: 1rem 25%;
+}
+.p-dashboard__content__addButton {
+  border: 1px dashed #333;
 }
 
 .p-writefreely {

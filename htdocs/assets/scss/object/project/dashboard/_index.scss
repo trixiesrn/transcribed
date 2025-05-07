@@ -1,6 +1,24 @@
 .p-dashboard {
-    margin: 10% auto;
-    width: 50%; 
+    background: #82BAC4;
+    height: 100vh;
+
+    &__header {
+        &__text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 3rem;
+            text-align: center;
+            color: #FFF;
+            margin: 0;
+
+            @media (max-width: 768px) {
+                font-size: 6vh;
+            }
+    
+            @media (max-width: 480px) {
+                font-size: 4vh;
+            }
+        }
+    }
 
     &__users-section {
         display: flex;
@@ -10,33 +28,43 @@
         &__icon {
             height: 3rem;
             width: 3rem;
-            border: 1px solid #333;
-            border-radius: 99999px;
         }
     }
 
     &__button-group {
+        margin: auto 25%;
+        width: 50%; 
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
-        border-top: 1px solid #333;
         margin-top: 3rem;
         padding-top: 3rem;
+        width: 75%;
 
         &__button {
             padding: 1rem;
             background: #FFF;
-            border: 1px solid #333;
-            border-radius: 1rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            border: 1px solid #333;
             align-items: center;
 
             &__icon {
                 height: 3rem;
                 width: 3rem;
             }
+        }
+    }
+
+    &__content {
+        background: #ffffff50;
+        border-radius: 3rem;
+        height: 70vh;
+        margin: 1rem 25%;
+
+        &__addButton {
+            border: 1px dashed #333;
         }
     }
 
