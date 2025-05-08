@@ -1,5 +1,6 @@
 //Import foundation styles
 @import "object/foundation/defaults";
+@import "object/foundation/mediaquery";
 
 // Import page styles
 @import "object/project/login/index";
@@ -10,3 +11,4 @@
 @import "object/component/textfield";
 @import "object/component/textarea";
 @import "object/component/button";
+@import "object/component/modal";

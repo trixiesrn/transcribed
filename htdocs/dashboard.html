@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script defer type="module" src="assets/js/firebase-connection.js"></script>
     <script defer type="module" src="assets/js/firebase-getUserData.js"></script>
-    <script src="assets/js/page-redirection.js"></script>
+    <script src="assets/js/modal.js"></script>
+    <script src="assets/js/sendMessage.js"></script>
 </head>
 <body>
     <div class="p-dashboard">
@@ -15,16 +16,55 @@
             <p class="p-dashboard__header__text">transcribed</p>
         </div>
         <div class="p-dashboard__content">
-            <!-- <div class="p-dashboard__button-group">
-                <button class="p-dashboard__button-group__button" onclick="window.location.href='questions.html'"><img src="assets/img/dashboard/icon-question.svg" class="p-dashboard__button-group__button__icon"> Add Question</button>
-                <button class="p-dashboard__button-group__button" onclick="window.location.href='answerquestion.html'"id="answerquestionBtn"><img src="assets/img/dashboard/icon-question.svg" class="p-dashboard__button-group__button__icon">Answer Random Question</button>
-                <button class="p-dashboard__button-group__button" onclick="window.location.href='write-freely.html'"id="writeBtn"><img src="assets/img/dashboard/icon-pen.svg" class="p-dashboard__button-group__button__icon">Write freely</button>
-                <button class="p-dashboard__button-group__button" onclick="window.location.href='drafts.html'"id="draftsBtn"><img src="assets/img/dashboard/icon-envelope.svg" class="p-dashboard__button-group__button__icon">Drafts</button>
-                <button class="p-dashboard__button-group__button" onclick="window.location.href='messages.html'"id="messagesBtn"><img src="assets/img/dashboard/icon-envelope.svg" class="p-dashboard__button-group__button__icon">Messages</button>
-            </div> -->
-            <button class="p-dashboard__content__addButton">
+            <div class="p-dashboard__content__envelope">
+                <div class="p-dashboard__content__envelope__flap"></div>
+            </div>  
+            <div class="p-dashboard__content__message">
+                <div class="p-dashboard__content__message__body">
+                    <p class="p-dashboard__content__message__body__header">Heading</p>
+                    <p class="p-dashboard__content__message__body__body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit iure cumque quidem quibusdam unde nihil quo eos porro itaque praesentium! Fuga minima corrupti architecto sequi natus voluptatum dolorem distinctio tenetur.</p>
+                    <div class="p-dashboard__content__message__tags">
+                        <p class="p-dashboard__content__message__tags__txt">Tags</p>
+                        <p class="p-dashboard__content__message__tags__txt">Tags</p>
+                    </div>
+                    <div class="p-dashboard__content__message__user-details">
+                        <p>January 1, 2025</p>
+                        <p>00:00:00</p>
+                        <p class="">Trixie L. Soriano</p>
+                        <img src="./assets/img/dashboard/icon-user.svg" alt="" class="p-dashboard__content__message__user-details__img">
+                    </div>
+                </div>
+            </div>
+        
+            <button type="button" class="p-dashboard__content__addButton" id="addMessageButton">
                 + 
             </button>
+        </div>
+        <div id="addMessageContainer" class="c-modal">
+            <div class="c-modal__content">
+              <!-- Modal content-->
+              <div class="c-modal__content__body">
+                <div class="c-modal__content__body__headers">
+                  <button class="c-modal__close-button">&times;</button>
+                  <h4 class="c-modal__content__body__headers__text">Send Message</h4>
+                </div>
+                <form class="c-modal__content__body__content">
+                    <div class="c-modal__content__body__content__field">
+                        <label for="subject">Subject</label>
+                        <input type="text" name="subject" id="subject-message" class="c-textarea">
+                    </div>
+                    <div class="c-modal__content__body__content__field">
+                        <label for="body">Body</label>
+                        <textarea name="body" id="body-message" placeholder="Lorem" class="c-textarea" rows="10"></textarea>
+                    </div>
+                    <div class="c-modal__content__body__button-container">
+                        <button type="button" class="c-modal__content__body__button-container__button is-white" onclick="saveAsDraft()">Save as Draft</button>
+                        <button type="button" class="c-modal__content__body__button-container__button is-blue" onclick="submit()">Submit</button>
+                    </div>
+                </form>
+              </div>
+          
+            </div>
         </div>
     </div>
 </body>
