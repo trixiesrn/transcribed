@@ -9,12 +9,11 @@
     <script defer type="module" src="assets/js/firebase-getUserData.js"></script>
     <script src="assets/js/modal.js"></script>
     <script src="assets/js/sendMessage.js"></script>
+
 </head>
 <body>
+    <div id="container"></div>
     <div class="p-dashboard">
-        <div class="p-dashboard__header">
-            <p class="p-dashboard__header__text">transcribed</p>
-        </div>
         <div class="p-dashboard__content">
             <div class="p-dashboard__content__envelope">
                 <div class="p-dashboard__content__envelope__flap"></div>
@@ -22,7 +21,7 @@
             <div class="p-dashboard__content__message">
                 <div class="p-dashboard__content__message__body">
                     <p class="p-dashboard__content__message__body__header">Heading</p>
-                    <p class="p-dashboard__content__message__body__body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit iure cumque quidem quibusdam unde nihil quo eos porro itaque praesentium! Fuga minima corrupti architecto sequi natus voluptatum dolorem distinctio tenetur.</p>
+                    <p class="p-dashboard__content__message__body__body" id="transcribed-word">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit iure cumque quidem quibusdam unde nihil quo eos porro itaque praesentium! Fuga minima corrupti architecto sequi natus voluptatum dolorem distinctio tenetur.</p>
                     <div class="p-dashboard__content__message__tags">
                         <p class="p-dashboard__content__message__tags__txt">Tags</p>
                         <p class="p-dashboard__content__message__tags__txt">Tags</p>
@@ -30,8 +29,9 @@
                     <div class="p-dashboard__content__message__user-details">
                         <p>January 1, 2025</p>
                         <p>00:00:00</p>
-                        <p class="">Trixie L. Soriano</p>
-                        <img src="./assets/img/dashboard/icon-user.svg" alt="" class="p-dashboard__content__message__user-details__img">
+                        <p id="user-name">Trixie L. Soriano</p>
+                        <p id="user-email" style="display:none;"></p>
+                        <img id="user-photo" src="./assets/img/dashboard/icon-user.svg" alt="User Photo" class="p-dashboard__content__message__user-details__img">
                     </div>
                 </div>
             </div>
@@ -67,5 +67,6 @@
             </div>
         </div>
     </div>
+    <script src="assets/js/header.js"></script>
 </body>
 </html>
