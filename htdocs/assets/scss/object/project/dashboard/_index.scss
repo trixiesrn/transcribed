@@ -1,11 +1,9 @@
 .p-dashboard {
-    background: #f3f4f6;
-    height: 100vh;
+    position: relative;
 
     &__header {
         display: flex;
         justify-content: space-between;
-        background: #f3f4f6;
         padding: 1rem 1.5rem;
 
         &__text {
@@ -64,6 +62,64 @@
             &__icon {
                 height: 3rem;
                 width: 3rem;
+            }
+        }
+    }
+
+    &__tab-container {
+        margin: 0 25%;
+        padding: 2rem;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+
+        &__option {
+            background: #d8d9db;
+            color: #2f2f2f;
+            padding: 1rem 2rem;
+            border-radius: 4rem;
+            border: none;
+            box-shadow: 1px 4px 15px 0px #888888;
+            width: fit-content;
+
+            &:hover{
+                background: #b1b3b5;
+                color: #FFF;
+            }
+        }
+    }
+
+    &__options-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-end;
+        padding: 3rem 0;
+        position: fixed;
+        z-index: 2;
+        right: 2rem;
+        bottom: 0;
+
+        &__option {
+            display: flex;
+            background: #d8d9db;
+            color: #2f2f2f;
+            padding: 1rem 2rem;
+            border-radius: 4rem;
+            border: none;
+            box-shadow: 1px 4px 15px 0px #888888;
+            width: fit-content;
+            align-items: center;
+            gap: 1rem;
+
+            &:hover{
+                background: #b1b3b5;
+                color: #FFF;
+            }
+
+            img {
+                height: 2rem;
+                width: 2rem;
             }
         }
     }
