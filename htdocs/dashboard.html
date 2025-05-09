@@ -52,12 +52,31 @@
                     </div>
                 </div>
             </div>
-        
-            <button type="button" class="p-dashboard__content__addButton" id="addMessageButton">
-                + 
-            </button>
         </div>
-        <div id="addMessageContainer" class="c-modal">
+        <div id="answerRandomQuestionContainer" class="c-modal">
+            <div class="c-modal__content">
+              <!-- Modal content-->
+              <div class="c-modal__content__body">
+                <div class="c-modal__content__body__headers">
+                  <button class="c-modal__close-button">&times;</button>
+                  <h4 class="c-modal__content__body__headers__text">Answer Random Question</h4>
+                </div>
+                <form class="c-modal__content__body__content">
+                    <div class="c-modal__content__body__content__field">
+                        <label for="body">Body</label>
+                        <textarea name="body" id="body-message" placeholder="Lorem" class="c-textarea" rows="10"></textarea>
+                    </div>
+                    <div class="c-modal__content__body__button-container">
+                        <button type="button" class="c-modal__content__body__button-container__button is-white" onclick="saveAsDraft()">Save as Draft</button>
+                        <button type="button" class="c-modal__content__body__button-container__button is-blue" onclick="submit()">Submit</button>
+                    </div>
+                </form>
+              </div>
+          
+            </div>
+        </div>
+
+        <div id="answerQuestionContainer" class="c-modal">
             <div class="c-modal__content">
               <!-- Modal content-->
               <div class="c-modal__content__body">
@@ -83,15 +102,47 @@
           
             </div>
         </div>
-        <div id="addQuestion" class="c-modal">
+
+        <div id="sendMessageContainer" class="c-modal">
             <div class="c-modal__content">
               <!-- Modal content-->
               <div class="c-modal__content__body">
                 <div class="c-modal__content__body__headers">
                   <button class="c-modal__close-button">&times;</button>
-                  <h4 class="c-modal__content__body__headers__text">Add Question</h4>
+                  <h4 class="c-modal__content__body__headers__text">Send Message</h4>
                 </div>
                 <form class="c-modal__content__body__content">
+                    <div class="c-modal__content__body__content__field">
+                        <label for="subject">Subject</label>
+                        <input type="text" name="subject" id="subject-message" class="c-textarea">
+                    </div>
+                    <div class="c-modal__content__body__content__field">
+                        <label for="body">Body</label>
+                        <textarea name="body" id="body-message" placeholder="Lorem" class="c-textarea" rows="10"></textarea>
+                    </div>
+                    <div class="c-modal__content__body__button-container">
+                        <button type="button" class="c-modal__content__body__button-container__button is-white" onclick="saveAsDraft()">Save as Draft</button>
+                        <button type="button" class="c-modal__content__body__button-container__button is-blue" onclick="submit()">Submit</button>
+                    </div>
+                </form>
+              </div>
+          
+            </div>
+        </div>
+
+        <div id="askQuestionContainer" class="c-modal">
+            <div class="c-modal__content">
+              <!-- Modal content-->
+              <div class="c-modal__content__body">
+                <div class="c-modal__content__body__headers">
+                  <button class="c-modal__close-button">&times;</button>
+                  <h4 class="c-modal__content__body__headers__text">Ask Question</h4>
+                </div>
+                <form class="c-modal__content__body__content">
+                    <div class="c-modal__content__body__content__field">
+                        <label for="subject">Subject</label>
+                        <input type="text" name="subject" id="subject-message" class="c-textarea">
+                    </div>
                     <div class="c-modal__content__body__content__field">
                         <label for="body">Body</label>
                         <textarea name="body" id="body-message" placeholder="Lorem" class="c-textarea" rows="10"></textarea>
