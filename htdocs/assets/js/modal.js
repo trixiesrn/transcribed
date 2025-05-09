@@ -1,22 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const modalButton = document.getElementById('addMessageButton');
-  const modal = document.getElementById('addMessageContainer');
-  const closeButtons = modal.querySelectorAll('.c-modal__close-button');
+  const answerRandomQuestionButton = document.getElementById('answerRandomQuestionButton');
+  const answerRandomQuestionContainer = document.getElementById('answerRandomQuestionContainer');
 
-  modalButton.onclick = function() {
-    modal.style.display = 'block';
+  answerRandomQuestionButton.onclick = function() {
+    answerRandomQuestionContainer.style.display = 'block';
+    sendMessageContainer.style.display = 'none';
+    askQuestionContainer.style.display = 'none';
   };
 
-  closeButtons.forEach(button => {
-    button.onclick = function() {
-      modal.style.display = 'none';
-    };
-  });
+  const sendMessageButton = document.getElementById('sendMessageButton');
+  const sendMessageContainer = document.getElementById('sendMessageContainer');
 
-  // Optional: Close modal if user clicks outside the modal content
-  window.onclick = function(event) {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
+  sendMessageButton.onclick = function() {
+    answerRandomQuestionContainer.style.display = 'none';
+    sendMessageContainer.style.display = 'block';
+    askQuestionContainer.style.display = 'none';
+  };
+
+  const askQuestionButton = document.getElementById('askQuestionButton');
+  const askQuestionContainer = document.getElementById('askQuestionContainer');
+
+  askQuestionButton.onclick = function() {
+    answerRandomQuestionContainer.style.display = 'none';
+    sendMessageContainer.style.display = 'none';
+    askQuestionContainer.style.display = 'block';
   };
 });

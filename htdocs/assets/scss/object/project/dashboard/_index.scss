@@ -4,7 +4,7 @@
     &__header {
         display: flex;
         justify-content: space-between;
-        padding: 1rem 1.5rem;
+        padding: 1rem;
 
         &__text {
             font-family: 'Courier New', Courier, monospace;
@@ -18,7 +18,7 @@
             }
     
             @include sp {
-                font-size: 4vh;
+                font-size: 2rem;
             }
         }
 
@@ -75,10 +75,9 @@
 
         @include sp {
             margin: 0%;
-            flex-direction: column;
             gap: 1rem;
             width: 100%;
-            padding: 0;
+            padding: 1rem 0;
         }
 
         &__option {

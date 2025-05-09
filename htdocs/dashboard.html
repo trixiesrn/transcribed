@@ -21,15 +21,14 @@
         <p id="inviteLink"></p> -->
         <!-- Code below will only show if there is existing partner. -->
         <div class="p-dashboard__options-container">
-            <button class="p-dashboard__options-container__option" id=""><i class="fa-solid fa-dice"></i>Answer Random Question</button>
-            <button class="p-dashboard__options-container__option" id=""><i class="fa-solid fa-paper-plane"></i>Answer Question</button>
-            <button class="p-dashboard__options-container__option" id="addMessageButton"><i class="fa-solid fa-envelope"></i>Send Message</button>
-            <button class="p-dashboard__options-container__option" id="addQuestion"><i class="fa-solid fa-question"></i>Ask Question</button>
+            <button class="p-dashboard__options-container__option" id="answerRandomQuestionButton"><i class="fa-solid fa-dice"></i>Answer Random Question</button>
+            <button class="p-dashboard__options-container__option" id="sendMessageButton"><i class="fa-solid fa-envelope"></i>Send Message</button>
+            <button class="p-dashboard__options-container__option" id="askQuestionButton"><i class="fa-solid fa-question"></i>Ask Question</button>
         </div>
         <div class="p-dashboard__tab-container">
             <button class="p-dashboard__tab-container__option">All</button>
             <button class="p-dashboard__tab-container__option">Messages</button>
-            <button class="p-dashboard__tab-container__option">Recommendations</button>
+            <button class="p-dashboard__tab-container__option">Responses</button>
         </div>  
         <div class="p-dashboard__content">
             <div class="p-dashboard__content__envelope">
@@ -62,36 +61,9 @@
                   <h4 class="c-modal__content__body__headers__text">Answer Random Question</h4>
                 </div>
                 <form class="c-modal__content__body__content">
+                    <p class="c-modal__content__body__content__text">Sample Question</p>
                     <div class="c-modal__content__body__content__field">
-                        <label for="body">Body</label>
-                        <textarea name="body" id="body-message" placeholder="Lorem" class="c-textarea" rows="10"></textarea>
-                    </div>
-                    <div class="c-modal__content__body__button-container">
-                        <button type="button" class="c-modal__content__body__button-container__button is-white" onclick="saveAsDraft()">Save as Draft</button>
-                        <button type="button" class="c-modal__content__body__button-container__button is-blue" onclick="submit()">Submit</button>
-                    </div>
-                </form>
-              </div>
-          
-            </div>
-        </div>
-
-        <div id="answerQuestionContainer" class="c-modal">
-            <div class="c-modal__content">
-              <!-- Modal content-->
-              <div class="c-modal__content__body">
-                <div class="c-modal__content__body__headers">
-                  <button class="c-modal__close-button">&times;</button>
-                  <h4 class="c-modal__content__body__headers__text">Send Message</h4>
-                </div>
-                <form class="c-modal__content__body__content">
-                    <div class="c-modal__content__body__content__field">
-                        <label for="subject">Subject</label>
-                        <input type="text" name="subject" id="subject-message" class="c-textarea">
-                    </div>
-                    <div class="c-modal__content__body__content__field">
-                        <label for="body">Body</label>
-                        <textarea name="body" id="body-message" placeholder="Lorem" class="c-textarea" rows="10"></textarea>
+                        <textarea name="body" id="body-message" placeholder="Input your answer here..." class="c-textarea" rows="10"></textarea>
                     </div>
                     <div class="c-modal__content__body__button-container">
                         <button type="button" class="c-modal__content__body__button-container__button is-white" onclick="saveAsDraft()">Save as Draft</button>
@@ -113,12 +85,7 @@
                 </div>
                 <form class="c-modal__content__body__content">
                     <div class="c-modal__content__body__content__field">
-                        <label for="subject">Subject</label>
-                        <input type="text" name="subject" id="subject-message" class="c-textarea">
-                    </div>
-                    <div class="c-modal__content__body__content__field">
-                        <label for="body">Body</label>
-                        <textarea name="body" id="body-message" placeholder="Lorem" class="c-textarea" rows="10"></textarea>
+                        <textarea name="body" id="body-message" placeholder="Hiii" class="c-textarea" rows="10"></textarea>
                     </div>
                     <div class="c-modal__content__body__button-container">
                         <button type="button" class="c-modal__content__body__button-container__button is-white" onclick="saveAsDraft()">Save as Draft</button>
@@ -140,12 +107,7 @@
                 </div>
                 <form class="c-modal__content__body__content">
                     <div class="c-modal__content__body__content__field">
-                        <label for="subject">Subject</label>
-                        <input type="text" name="subject" id="subject-message" class="c-textarea">
-                    </div>
-                    <div class="c-modal__content__body__content__field">
-                        <label for="body">Body</label>
-                        <textarea name="body" id="body-message" placeholder="Lorem" class="c-textarea" rows="10"></textarea>
+                        <textarea name="body" id="body-message" placeholder="What do you wanna ask?" class="c-textarea" rows="10"></textarea>
                     </div>
                     <div class="c-modal__content__body__button-container">
                         <button type="button" class="c-modal__content__body__button-container__button is-white" onclick="saveAsDraft()">Save as Draft</button>

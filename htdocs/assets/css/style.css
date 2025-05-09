@@ -94,7 +94,7 @@ p {
 .p-dashboard__header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
 }
 .p-dashboard__header__text {
   font-family: "Courier New", Courier, monospace;
@@ -103,14 +103,14 @@ p {
   color: #000000;
   margin: 0;
 }
-@media (max-width: 1024px) {
+@media (max-width: 756px) {
   .p-dashboard__header__text {
     font-size: 6vh;
   }
 }
 @media (max-width: 480px) {
   .p-dashboard__header__text {
-    font-size: 4vh;
+    font-size: 2rem;
   }
 }
 .p-dashboard__header__user-details {
@@ -160,10 +160,9 @@ p {
 @media (max-width: 480px) {
   .p-dashboard__tab-container {
     margin: 0%;
-    flex-direction: column;
     gap: 1rem;
     width: 100%;
-    padding: 0;
+    padding: 1rem 0;
   }
 }
 .p-dashboard__tab-container__option {
@@ -340,7 +339,7 @@ p {
 .c-textfield {
   padding: 1rem 0;
   border: none;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #f3f4f6;
 }
 .c-textfield:focus {
   border: none;
@@ -349,7 +348,7 @@ p {
 .c-textarea {
   height: auto;
   border: none;
-  border: 1px solid #333;
+  border: 1px solid #f3f4f6;
   border-radius: 5px;
   padding: 1.4rem;
 }
@@ -410,6 +409,7 @@ p {
   margin: 2rem;
 }
 .c-modal__content__body__headers__text {
+  text-align: center;
   font-size: 1.6rem;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -422,6 +422,12 @@ p {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.c-modal__content__body__content__text {
+  text-align: center;
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 .c-modal__content__body__button-container {
   display: flex;
