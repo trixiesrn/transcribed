@@ -5,9 +5,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
     document.getElementById("user-name").textContent = user.displayName;
     document.getElementById("user-email").textContent = user.email;
-    document.getElementById("user-photo").src = user.photoURL;
-
-    
+    document.getElementById("user-photo").src = user.photoURL; 
     
     } else {
     // Redirect to login if not signed in

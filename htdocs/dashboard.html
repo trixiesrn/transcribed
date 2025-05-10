@@ -8,8 +8,9 @@
     <script defer type="module" src="assets/js/firebase-connection.js"></script>
     <script defer type="module" src="assets/js/firebase-getUserData.js"></script>
     <script defer type="module" src="assets/js/firebase-invite.js"></script>
+    <script defer type="module" src="assets/js/firebase-fetchMessages.js"></script>
+    <script defer type="module" src="assets/js/sendMessage.js"></script>
     <script src="assets/js/modal.js"></script>
-    <script src="assets/js/sendMessage.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -31,7 +32,9 @@
             <button class="p-dashboard__tab-container__option">Responses</button>
         </div>  
         <div class="p-dashboard__content">
-            <div class="p-dashboard__content__envelope">
+            <div id="loading-message">Fetching messages...</div>
+            <div id="chat-container"></div>
+            <!-- <div class="p-dashboard__content__envelope">
                 <div class="p-dashboard__content__envelope__flap"></div>
             </div>  
             <div class="p-dashboard__content__message">
@@ -50,7 +53,7 @@
                         <img id="user-photo" src="./assets/img/dashboard/icon-user.svg" alt="User Photo" class="p-dashboard__content__message__user-details__img">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div id="answerRandomQuestionContainer" class="c-modal">
             <div class="c-modal__content">
@@ -85,11 +88,11 @@
                 </div>
                 <form class="c-modal__content__body__content">
                     <div class="c-modal__content__body__content__field">
-                        <textarea name="body" id="body-message" placeholder="Hiii" class="c-textarea" rows="10"></textarea>
+                        <textarea name="body" id="sendMessagetxtarea" placeholder="Hiii" class="c-textarea" rows="10"></textarea>
                     </div>
                     <div class="c-modal__content__body__button-container">
                         <button type="button" class="c-modal__content__body__button-container__button is-white" onclick="saveAsDraft()">Save as Draft</button>
-                        <button type="button" class="c-modal__content__body__button-container__button is-blue" onclick="submit()">Submit</button>
+                        <button type="button" id="sendMessageSubmitBtn" class="c-modal__content__body__button-container__button is-blue">Submit</button>
                     </div>
                 </form>
               </div>
@@ -120,6 +123,5 @@
         </div>
     </div>
     <script src="assets/js/header.js"></script>
-    <script src="assets/js/getInvitelink.js"></script>
 </body>
 </html>
