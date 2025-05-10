@@ -42,41 +42,45 @@ async function fetchMessages() {
   const loadingMessage = document.getElementById("loading-message");
   const chatContainer = document.getElementById("p-dashboard__content__message-container");
 
-  if (!loadingMessage) {
-    console.error("Loading message element not found");
+  if (!loadingMessage || !chatContainer) {
+    console.error("Missing elements");
     return;
   }
 
-  // Show loading message
   loadingMessage.style.display = "block";
 
   const messagesRef = collection(db, "messages");
-  const q = query(messagesRef, orderBy("timestamp", "desc")); // Fetch messages in descending order
+  const q = query(messagesRef, orderBy("timestamp", "desc")); // Already sorted
 
   const querySnapshot = await getDocs(q);
 
-  chatContainer.innerHTML = ""; // clear existing messages
+  chatContainer.innerHTML = "";
 
   for (const docSnap of querySnapshot.docs) {
     const message = docSnap.data();
-    const { senderId, receiverId, text } = message;
+    const { senderId, receiverId, type } = message;
 
-    if (
+    const isDirectMessage =
       (senderId === currentUserId && receiverId === linkedPartnerId) ||
-      (senderId === linkedPartnerId && receiverId === currentUserId)
-    ) {
-      await displayMessage(message); // ✅ Works correctly with for...of
+      (senderId === linkedPartnerId && receiverId === currentUserId);
+
+    const isRandomAnswer =
+      type === "randomAnswer" &&
+      (senderId === currentUserId || senderId === linkedPartnerId);
+
+    if (isDirectMessage || isRandomAnswer) {
+      await displayMessage(message);
     }
   }
 
-
-  // Hide loading message after messages are fetched
   loadingMessage.style.display = "none";
 }
 
 
+
 function listenForMessages() {
   const messagesRef = collection(db, "messages");
+  const answerstoRandomRef = collection(db, "messages");
   const q = query(messagesRef, orderBy("timestamp", "desc"));
 
   onSnapshot(q, (querySnapshot) => {

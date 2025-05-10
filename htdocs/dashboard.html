@@ -11,7 +11,7 @@
     <script defer type="module" src="assets/js/firebase-fetchMessages.js"></script>
     <script defer type="module" src="assets/js/sendMessage.js"></script>
     <script defer type="module" src="assets/js/firebase-fetchRandomQuestion.js"></script>
-    <script src="assets/js/modal.js"></script>
+    <script defer type="module" src="assets/js/modal.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -23,9 +23,9 @@
         <p id="inviteLink"></p> -->
         <!-- Code below will only show if there is existing partner. -->
         <div class="p-dashboard__options-container">
-            <button class="p-dashboard__options-container__option" id="answerRandomQuestionButton"><i class="fa-solid fa-dice"></i>Answer Random Question</button>
+            <!-- <button class="p-dashboard__options-container__option" id="answerRandomQuestionButton"><i class="fa-solid fa-dice"></i>Answer Random Question</button> -->
             <button class="p-dashboard__options-container__option" id="sendMessageButton"><i class="fa-solid fa-envelope"></i>Send Message</button>
-            <button class="p-dashboard__options-container__option" id="askQuestionButton"><i class="fa-solid fa-question"></i>Ask Question</button>
+            <!-- <button class="p-dashboard__options-container__option" id="askQuestionButton"><i class="fa-solid fa-question"></i>Ask Question</button> -->
         </div>
         <!-- <div class="p-dashboard__tab-container">
             <button class="p-dashboard__tab-container__option">All</button>
@@ -42,16 +42,16 @@
               <div class="c-modal__content__body">
                 <div class="c-modal__content__body__headers">
                   <button class="c-modal__close-button">&times;</button>
-                  <h4 class="c-modal__content__body__headers__text__question">Answer Random Question</h4>
+                  <h4 class="c-modal__content__body__headers__text">Answer Random Question</h4>
                 </div>
                 <form class="c-modal__content__body__content">
-                    <p class="c-modal__content__body__content__text">Sample Question</p>
+                    <p class="c-modal__content__body__content__text__question">Sample Question</p>
                     <div class="c-modal__content__body__content__field">
-                        <textarea name="body" id="body-message" placeholder="Input your answer here..." class="c-textarea" rows="10"></textarea>
+                        <textarea name="body" placeholder="Input your answer here..." class="c-textarea" rows="10" id="randomAnswerInput"></textarea>
                     </div>
                     <div class="c-modal__content__body__button-container">
-                        <button type="button" class="c-modal__content__body__button-container__button is-white">Skip</button>
-                        <button type="button" class="c-modal__content__body__button-container__button is-blue">Submit</button>
+                        <button type="button" class="c-modal__content__body__button-container__button is-white"  id="skipQuestionButton">Skip</button>
+                        <button type="button" class="c-modal__content__body__button-container__button is-blue" id="submitAnswerButton">Submit</button>
                     </div>
                 </form>
               </div>
