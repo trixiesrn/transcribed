@@ -1,33 +1,45 @@
-import { auth, provider, GoogleAuthProvider, signInWithPopup } from "./firebase-connection.js";
+import { auth, db, provider, GoogleAuthProvider, signInWithPopup } from "./firebase-connection.js";
+import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 const googleLoginBtn = document.getElementById('googleLoginBtn');
+const inviteSection = document.getElementById('inviteSection');
+const inviteLinkDisplay = document.getElementById('inviteLink');
 
-googleLoginBtn.addEventListener('click', (e) => {
-  signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
+googleLoginBtn.addEventListener('click', async () => {
+  try {
+    const result = await signInWithPopup(auth, provider);
     const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
     const user = result.user;
-    // IdP data available using getAdditionalUserInfo(result)
-    // ...
-    if (user) {
-      window.location.href = "dashboard.html";
-    } else {
-      // Redirect to login if not signed in
-      window.location.href = "login.html";
-    }
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
 
-    alert(errorMessage)
-  }); 
+    const userRef = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
+
+    if (!userSnap.exists()) {
+      // First-time user
+      await setDoc(userRef, {
+        name: user.displayName,
+        email: user.email,
+        partnerId: null
+      });
+
+      showInvite(user.uid); // First time, no partner yet
+    } else {
+      const data = userSnap.data();
+      if (!data.partnerId) {
+        showInvite(user.uid); // No partner yet
+      } else {
+        window.location.href = "chat.html"; // Already linked to a partner
+      }
+    }
+  } catch (error) {
+    const errorMessage = error.message;
+    alert("Login failed: " + errorMessage);
+  }
 });
+
+function showInvite(uid) {
+  const link = `${window.location.origin}/invite.html?uid=${uid}`;
+  inviteLinkDisplay.textContent = `Invite your partner: ${link}`;
+  inviteLinkDisplay.href = link;
+  inviteSection.style.display = 'block';
+}

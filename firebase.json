@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source": "/invite.html",
+        "destination": "/invite.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
