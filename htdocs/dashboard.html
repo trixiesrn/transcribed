@@ -26,14 +26,14 @@
             <button class="p-dashboard__options-container__option" id="sendMessageButton"><i class="fa-solid fa-envelope"></i>Send Message</button>
             <button class="p-dashboard__options-container__option" id="askQuestionButton"><i class="fa-solid fa-question"></i>Ask Question</button>
         </div>
-        <div class="p-dashboard__tab-container">
+        <!-- <div class="p-dashboard__tab-container">
             <button class="p-dashboard__tab-container__option">All</button>
             <button class="p-dashboard__tab-container__option">Messages</button>
             <button class="p-dashboard__tab-container__option">Responses</button>
-        </div>  
+        </div>   -->
         <div class="p-dashboard__content">
             <div id="loading-message">Fetching messages...</div>
-            <div id="chat-container"></div>
+            <div id="p-dashboard__content__message-container" class="p-dashboard__content__message-container"></div>
             <!-- <div class="p-dashboard__content__envelope">
                 <div class="p-dashboard__content__envelope__flap"></div>
             </div>  
@@ -119,6 +119,13 @@
                 </form>
               </div>
           
+            </div>
+        </div>
+
+        <div id="message-modal" class="p-dashboard__content__modal" style="display:none;">
+            <div class="p-dashboard__content__modal__content">
+                <span id="modal-close">&times;</span>
+                <p id="modal-text"></p>
             </div>
         </div>
     </div>
