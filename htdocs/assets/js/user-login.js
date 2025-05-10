@@ -28,7 +28,7 @@ googleLoginBtn.addEventListener('click', async () => {
       if (!data.partnerId) {
         showInvite(user.uid); // No partner yet
       } else {
-        window.location.href = "chat.html"; // Already linked to a partner
+        window.location.href = "dashboard.html"; // Already linked to a partner
       }
     }
   } catch (error) {
