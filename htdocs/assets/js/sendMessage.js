@@ -2,6 +2,8 @@ import { auth, db } from "./firebase-connection.js";
 import { collection, doc, getDoc, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
+const sendMessageContainer = document.getElementById('sendMessageContainer');
+
 let currentUserId = null;
 let linkedPartnerId = null;
 
@@ -55,7 +57,7 @@ async function sendMessage() {
 
     // Clear textarea and alert the user
     textarea.value = "";
-    alert("Message sent!");
+    sendMessageContainer.style.display = 'none';
   } catch (error) {
     console.error("Failed to send message:", error);
     alert("Sending failed.");

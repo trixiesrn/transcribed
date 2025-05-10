@@ -51,7 +51,7 @@ async function fetchMessages() {
   loadingMessage.style.display = "block";
 
   const messagesRef = collection(db, "messages");
-  const q = query(messagesRef, orderBy("timestamp"));
+  const q = query(messagesRef, orderBy("timestamp", "desc")); // Fetch messages in descending order
 
   const querySnapshot = await getDocs(q);
 
@@ -77,7 +77,7 @@ async function fetchMessages() {
 
 function listenForMessages() {
   const messagesRef = collection(db, "messages");
-  const q = query(messagesRef, orderBy("timestamp"));
+  const q = query(messagesRef, orderBy("timestamp", "desc"));
 
   onSnapshot(q, (querySnapshot) => {
     const chatContainer = document.getElementById("p-dashboard__content__message-container");
@@ -89,13 +89,10 @@ function listenForMessages() {
       const message = doc.data();
       const { senderId, recipientId, text } = message;
 
-      console.log("Realtime message:", { senderId, recipientId, text });
-
       if (
         (senderId === currentUserId && recipientId === linkedPartnerId) ||
         (senderId === linkedPartnerId && recipientId === currentUserId)
       ) {
-        console.log("✔ Realtime: This message is between the current user and partner");
         displayMessage(message);
       }
     });
